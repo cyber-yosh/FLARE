@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "FLARE",
+  "version": "1.1",
+  "description": "Better Than Stratus",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "scripting",
+    "sidePanel",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "images/logo.png",
+        "images/logoFlare.png",
+        "images/logoFlare(lowres).png"
+
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "action": {
+    "default_popup": "default.html",
+    "default_icon": "images/logoFlare.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "images": ["images/lucas.png"]
+    }
+  ],
+  "icons": {
+    "128": "images/logoFlare.png",
+    "16": "images/logoFlare.png"
+  }
+}
